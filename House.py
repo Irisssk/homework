@@ -1,0 +1,30 @@
+from tkinter import *
+root = Tk()
+root.title('Домик')
+root.geometry('800x700')
+def function1():
+    canvas.config(canvas, bg='darkblue')
+def function2():
+    canvas.itemconfig(s, fill='lightyellow', outline='lightyellow')
+def function3():
+    canvas.itemconfig(h2, fill='yellow', outline='black')
+canvas = Canvas(root, width=500, height=600, bg = 'lightblue')
+t=canvas.create_rectangle(0,400,500,600, fill='lime', outline='lime')
+s=canvas.create_oval(400,20, 500, 120, width=1, fill = 'yellow', outline='yellow')
+o1=canvas.create_oval(50,50, 120, 120,  fill = 'white', outline='white')
+o2=canvas.create_oval(90,50, 160, 120,  fill = 'white', outline='white')
+o3=canvas.create_oval(130,50, 200, 120,  fill = 'white', outline='white')
+e0=canvas.create_rectangle(90,400,110,480, fill='brown', outline='black')
+e2=canvas.create_polygon(100,340,70,390, 90,390,60,420,90,420,50,450,150,450,110,420,140,420,110,390, 130, 390, fill='green', outline='black')
+h=canvas.create_rectangle(200,300,350,450, fill='red')
+h1=canvas.create_polygon(200,300,350,300,275,200, fill='orange', outline='black')
+h2=canvas.create_rectangle(250,350,300,400, fill='cyan')
+button1 = Button(root, text='День/ночь', width = 10, height = 1, bg='cyan', fg = 'blue', activebackground = 'orange', command=function1)
+button2 = Button(root, text='Солнце/луна', width = 10, height = 1, bg='cyan', fg = 'red', activebackground = 'orange', command=function2)
+button3 = Button(root, text='Окно/свет', width = 10, height = 1, bg='cyan', fg = 'orange', activebackground = 'red', command=function3)
+button1.pack()
+button2.pack()
+button3.pack()
+canvas.pack()
+root.mainloop()
+
